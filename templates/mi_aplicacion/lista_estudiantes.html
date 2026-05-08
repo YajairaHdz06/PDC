@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Estudiantes{% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <h2>Lista de Estudiantes</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Matricula</th>
+                <th>Carrera</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+                <tr>
+                    <td>{{ estudiante.nombre }} {{ estudiante.appat }} {{ estudiante.apmat }}</td>
+                    <td>{{ estudiante.matricula }}</td>
+                    <td>{{ estudiante.carrera.nombre }}</td>
+                    <td>
+                        <a href="{% url 'detalle_estudiante' estudiante.id  %}" class="btn btn-info">     Ver</a>
+                        <a href="{% url 'editar_estudiante' estudiante.id   %}" class="btn btn-warning">  Editar</a>
+                        <a href="{% url 'eliminar_estudiante' estudiante.id %}" class="btn btn-danger">   Eliminar</a>
+                        <a href="{% url 'crear_estudiante'                  %}" class="btn btn-success">  Crear</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No hay estudiantes disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

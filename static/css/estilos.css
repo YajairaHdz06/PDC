@@ -1,0 +1,152 @@
+/* Paleta Pastel Suave */
+:root {
+    --fondo-pastel: #cecdcb; /* Un crema pastel que se nota pero no cansa */
+    --azul-p: #d0e7ff;
+    --verde-p: #e2f0d9;
+    --morado-p: #f3e5f5;
+    --rosa-p: #ffdce5;
+    --amarillo-p: #fff9db;
+    --naranja-p: #ffe4d3;
+}
+
+body {
+    background-color: var(--fondo-pastel) !important;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 20px;
+}
+
+/* --- PANEL LATERAL MÁS ANCHO Y COLORIDO --- */
+.list-group-item {
+    border: none !important;
+    margin-bottom: 8px !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important; /* Más ancho y espacioso */
+    font-weight: 600 !important;
+    transition: 0.3s;
+    text-decoration: none !important;
+    display: block !important;
+}
+
+/* Colores para la sección de Inicio (cada uno diferente) */
+.list-group-item:nth-child(1) { background-color: var(--azul-p) !important; color: #4a90e2 !important; }
+.list-group-item:nth-child(2) { background-color: var(--verde-p) !important; color: #5a7d4a !important; }
+.list-group-item:nth-child(3) { background-color: var(--morado-p) !important; color: #7b1fa2 !important; }
+.list-group-item:nth-child(4) { background-color: var(--rosa-p) !important; color: #d64561 !important; }
+.list-group-item:nth-child(5) { background-color: var(--amarillo-p) !important; color: #856404 !important; }
+.list-group-item:nth-child(6) { background-color: var(--naranja-p) !important; color: #af5a2a !important; }
+
+/* Mantener el estilo para gestión académica */
+.menu-estudiantes { background-color: #e0f2f1 !important; color: #00695c !important; margin-top: 15px; }
+.menu-carreras { background-color: #eceff1 !important; color: #455a64 !important; margin-top: 15px; }
+.menu-crear { background-color: #ffffff !important; border: 2px dashed #eee !important; color: #999 !important; font-size: 0.85rem !important; }
+
+.list-group-item:hover {
+    transform: scale(1.03);
+    filter: brightness(0.98);
+}
+
+/* --- TARJETA DE CONTENIDO (DERECHA) MEJORADA --- */
+.main-card {
+    background-color: #ffffff !important;
+    border-radius: 25px !important;
+    padding: 40px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    border: none !important;
+    min-height: 500px;
+    
+    /* ESTO CENTRA TODO EL CONTENIDO */
+    display: block !important; /* Cambiar de flex a block evita que el mapa se encoja */
+    padding: 40px !important;
+    align-items: center !important; /* Centra horizontalmente */
+    text-align: center !important;  /* Centra el texto */
+}
+
+/* Para que los títulos se vean bien centrados */
+.main-card h1, .main-card h2 {
+    color: #4a90e2;
+    margin-bottom: 30px;
+    font-weight: 700;
+    width: 100%;
+}
+
+/* Contenedor del mapa para que sea ancho y alto */
+.mapa-contacto {
+    width: 100% !important; /* Ocupa todo el ancho disponible de la tarjeta */
+    max-width: 900px;      /* Límite para que no se vea gigante en pantallas 4K */
+    height: 450px;         /* Ajusta la altura a tu gusto */
+    margin: 20px auto;     /* Separa un poco del texto y lo centra */
+    border-radius: 15px;   /* Bordes redondeados para seguir tu estilo */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Si usas un iframe (Google Maps directo) */
+.mapa-contacto iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+/* --- AJUSTE DE TABLAS PARA QUE NO SE VEAN FLACAS --- */
+table {
+    width: 90% !important; /* Que no pegue a los bordes */
+    margin: 0 auto !important; /* Centra la tabla */
+    border-spacing: 0 10px !important;
+    border-collapse: separate !important;
+}
+
+thead th {
+    text-align: center !important; /* Centra los encabezados */
+}
+
+tbody td {
+    text-align: center !important; /* Centra los datos de la tabla */
+    padding: 15px !important;
+}
+
+/* --- AJUSTE DE FORMULARIOS CENTRADOS --- */
+form {
+    width: 100% !important;
+    max-width: 800px !important; /* Evita que el formulario sea demasiado ancho */
+    margin: 0 auto !important;
+}
+
+input, select, textarea {
+    text-align: center !important; /* Centra el texto dentro de los cuadros */
+}
+
+/* Botón de enviar centrado y más bonito */
+button[type="submit"] {
+    background-color: #89cff0 !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 30px !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    cursor: pointer;
+    margin-top: 20px !important;
+    transition: 0.3s !important;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* Tablas y Formularios */
+table {
+    width: 100% !important;
+    border-spacing: 0 10px !important;
+    border-collapse: separate !important;
+}
+
+tbody tr {
+    background-color: #fafafa !important;
+    border-radius: 15px !important;
+}
+
+input, select {
+    border: 2px solid var(--azul-p) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+}

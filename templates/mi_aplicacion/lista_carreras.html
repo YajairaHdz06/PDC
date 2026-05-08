@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Carreras{% endblock %}
+{% block content %}
+<div class="table-responsive">
+    <h2>Lista de Carreras</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Nombre </th>
+                <th> Clave </th>
+                <th> Modalidad </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for carrera in carreras %}
+                <tr>
+                    <td>{{ carrera.nombre    }}</td>
+                    <td>{{ carrera.clave     }}</td>
+                    <td>{{ carrera.modalidad }}</td>
+                    <td>
+                        <a href="{% url 'detalle_carrera'   carrera.id %}" class="btn btn-info">     Ver</a>
+                        <a href="{% url 'editar_carrera'    carrera.id %}" class="btn btn-warning">  Editar</a>
+                        <a href="{% url 'eliminar_carrera'  carrera.id %}" class="btn btn-danger">   Eliminar</a>
+                        <a href="{% url 'crear_carrera'                %}" class="btn btn-success">  Crear</a>
+                    </td>
+                </tr>
+                
+                {% empty %}
+                <tr>
+                    <td colspan="3"> No hay carreras disponibles. </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

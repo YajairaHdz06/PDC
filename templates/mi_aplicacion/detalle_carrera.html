@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Detalle de la Carrera {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Detalle de la Carrera</h2>
+    <p><strong>Nombre: </strong> {{ carrera.nombre }}</p>
+    <p><strong>Clave: </strong> {{ carrera.clave }}</p>
+    <p><strong>Modalidad: </strong> {{ carrera.modalidad }}</p>
+
+    <a href="{% url 'editar_carrera' carrera.id %} " class="btn btn-warning">Editar</a>
+    <a href="{% url 'lista_carreras' %}" class="btn btn-secondary">Volver</a>
+</div>
+{% endblock %}

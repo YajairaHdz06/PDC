@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class="container mt-4 text-center">
+        <h1>Hello, World 2026.</h1>
+        
+        <img src="{% static 'img/sauce_lloron.jpg' %}" 
+        alt="Sauce Llorón" 
+        class="img-fluid rounded shadow" 
+        style="max-height: 400px;">
+        
+        <p class="mt-3">Curso básico de Django</p>
+    </div>
+{% endblock %}

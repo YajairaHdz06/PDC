@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Eliminar Carrera{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>¿Estás seguro de que quieres eliminar esta carrera?</h2>
+    <p>Nombre: {{ carrera.nombre }}</p>
+    <p>Clave: {{ carrera.clave }}</p>
+    <p>Modalidad: {{ carrera.modalidad }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar</button>
+        <a href="{% url 'lista_carreras' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
