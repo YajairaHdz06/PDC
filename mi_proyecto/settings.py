@@ -82,9 +82,15 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
-        
+
     }
 }
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=600,
+        ssl_require=False  # Railway usualmente no requiere SSL estricto para MySQL
+    )
 
 
 # Password validation
@@ -122,5 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-#Directorio donde se encuentran los archivos estáticos
+# Directorio donde se encuentran los archivos estáticos
 STATICFILES_DIRS = [BASE_DIR / 'static']
